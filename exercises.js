@@ -8,10 +8,11 @@
 var doubleArray = function(arr) {
   var result = [];
   for (var i = 0; i < arr.length; i++) {
-    result.push(arr[i] * 2) 
+    result.push(arr[i] * 2); 
   }
-  return result
+  return result;
 }
+
 
 /* #sumArrays
  *
@@ -21,7 +22,23 @@ var doubleArray = function(arr) {
  * @param {Array}
  * @return {Bool}
  */
-var sumArrays;
+
+ function sumArrays(array1, array2) {
+   var result = 0;
+   var loopLength = 0;
+ 
+   if (array1.length > array2.length) {
+     loopLength = array1.length;
+   } else {
+     loopLength = array2.length;
+   }
+ 
+   for (var i = 0; i < loopLength; i++) {
+     result += (array1[i]+array2[i])
+   }
+ 
+   return result;
+}
 
 /* #stringCount
  *
@@ -30,7 +47,14 @@ var sumArrays;
  * @param {String}
  * @return {Number}
  */
-var stringCount;
+
+ var str;
+ function stringCount(str) {
+  var result = str.length;
+  if (typeof str === "string") {
+    return result; 
+ } 
+ };
 
 /* #arrayLength
  *
@@ -39,7 +63,12 @@ var stringCount;
  * @param {String}
  * @return {Number}
  */
-var arrayLength;
+
+var arr = [];
+function arrayLength(arr) {
+  var result = arr.length;
+    return result;
+};
 
 /* #countAll
  *
@@ -48,7 +77,15 @@ var arrayLength;
  * @param {Array}
  * @return {Number}
  */
-var countAll;
+
+
+function countAll (num){
+  var numberHolder = 0;
+    for(var i = 0; i < num.length; i++){
+    numberHolder += num[i]
+  }
+  return numberHolder;
+};
 
 /* #countStrings
  *
@@ -379,11 +416,11 @@ var tupleConvertToObject;
 
 
 module.exports = {
-  doubleArray: null,
-  sumArrays: null, 
-  stringCount: null,
-  arrayLength: null,
-  countAll: null,
+  doubleArray: doubleArray,
+  sumArrays: sumArrays, 
+  stringCount: stringCount,
+  arrayLength: arrayLength,
+  countAll: countAll,
   countStrings: null,
   countAllStrings: null,
   convertToArray: null,
