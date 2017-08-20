@@ -228,7 +228,17 @@ var sumBelowTen = function(array){
  * @param {String}
  * @return {Number}
  */
-var moreThanTenLetters;
+var moreThanTenLetters = function(string){
+  var number = 0;
+  for(var i = 0; i < string.length; i++){
+    if(string[i].length > 10){
+      number += 1;
+    }
+  }
+  return number;
+}
+
+
 
 /* #multiplyAll
  *
@@ -237,7 +247,13 @@ var moreThanTenLetters;
  * @param {Array}
  * @return {Number}
  */
-var multiplyAll;
+var multiplyAll = function(array){
+  var product = 1;
+  for(var i = 0; i < array.length; i++){
+    product *= array[i];
+  }
+  return product;
+};
 
 /* #getKeys
  *
@@ -483,8 +499,8 @@ module.exports = {
   splitString: splitString,
   lengthOfLast: lengthOfLast,
   sumBelowTen: sumBelowTen,
-  moreThanTenLetters: null,
-  multiplyAll: null,
+  moreThanTenLetters: moreThanTenLetters,
+  multiplyAll: multiplyAll,
   getKeys: null,
   sumAllPositive: null,
   stringCountBelowThree: null,
