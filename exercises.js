@@ -93,8 +93,16 @@ function countAll (num){
  *
  * @param {Array}
  * @return {Array}
- */
-var countStrings;
+*/
+function countStrings(arr) {
+  var numberHolder = [];
+  for(var i = 0; i < arr.length; i++){
+   numberHolder[i] = arr[i].length;
+  }
+  return numberHolder;
+}
+
+
 
 /* #countAllStrings
  *
@@ -103,7 +111,13 @@ var countStrings;
  * @param {String}
  * @return {Number}
  */
-var countAllStrings;
+function countAllStrings(str){
+  var sum = 0;
+  for (var i = 0; i < str.length; i++){
+    sum = sum + str[i].length;
+  }
+  return sum;
+};
 
 /* #convertToArray
  *
@@ -112,7 +126,15 @@ var countAllStrings;
  * @param {Object}
  * @return {Array}
  */
-var convertToArray;
+var convertToArray = function(obj){
+var arr = [];
+for(var value in obj) {
+  arr.push(obj[value]);
+
+}
+return arr;
+};
+
 
 /* #objectSize
  *
@@ -121,7 +143,14 @@ var convertToArray;
  * @param {Object}
  * @return {Number}
  */
-var objectSize;
+var objectSize = function(obj){
+  var createArray = [];
+  for(var i in obj){
+    createArray.push(obj[i]);
+  } return createArray.length;
+};
+
+
 
 /* #createZeroFilledArray
  *
@@ -130,7 +159,14 @@ var objectSize;
  * @param {Number}
  * @return {Zero}
  */
-var createZeroFilledArray;
+var createZeroFilledArray = function (number){
+  var createArray = [];
+  for(var i = 0; i < number; i++){
+    createArray.push(0);
+  }
+  return createArray;
+}
+
 
 /* #poppedArray
  *
@@ -139,7 +175,10 @@ var createZeroFilledArray;
  * @param {Array}
  * @return {Array}
  */
-var poppedArray;
+var poppedArray = function(array){
+  array.pop();
+  return array;
+};
 
 /* #splitString
  *
@@ -148,7 +187,9 @@ var poppedArray;
  * @param {String}
  * @return {Array}
  */
-var splitString;
+var splitString = function(string){
+  return string.split('');
+};
 
 /* #lengthOfLast
  *
@@ -157,7 +198,11 @@ var splitString;
  * @param {String}
  * @return {Number}
  */
-var lengthOfLast;
+var lengthOfLast = function(string){
+  var lastString = string.pop();
+  return lastString.length;
+};
+
 
 /* #sumBelowTen
  *
@@ -166,7 +211,15 @@ var lengthOfLast;
  * @param {Array}
  * @return {Number}
  */
-var sumBelowTen;
+var sumBelowTen = function(array){
+  var number = 0;
+  for(var i = 0; i < array.length; i++){
+    if(array[i] < 10){
+      number += array[i];
+    }
+  }
+  return number;
+};
 
 /* #moreThanTenLetters
  *
@@ -421,15 +474,15 @@ module.exports = {
   stringCount: stringCount,
   arrayLength: arrayLength,
   countAll: countAll,
-  countStrings: null,
-  countAllStrings: null,
-  convertToArray: null,
-  objectSize: null,
-  createZeroFilledArray: null,
-  poppedArray: null,
-  splitString: null,
-  lengthOfLast: null,
-  sumBelowTen: null,
+  countStrings: countStrings,
+  countAllStrings: countAllStrings,
+  convertToArray: convertToArray,
+  objectSize: objectSize,
+  createZeroFilledArray: createZeroFilledArray,
+  poppedArray: poppedArray,
+  splitString: splitString,
+  lengthOfLast: lengthOfLast,
+  sumBelowTen: sumBelowTen,
   moreThanTenLetters: null,
   multiplyAll: null,
   getKeys: null,
