@@ -401,7 +401,13 @@ var tupleToObjectReverse = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var strToKeys;
+var strToKeys = function(arr){
+ var strKey = {};
+ for (var i = 0; i < arr.length; i++) {
+   strKey[arr[i]] = 0
+ }
+return strKey;
+}
 
 /* #getValues
  *
@@ -410,7 +416,14 @@ var strToKeys;
  * @param {Object}
  * @return {Array}
  */
-var getValues;
+var getValues = function(obj){
+  var arr = [];
+for(var value in obj) {
+  arr.push(obj[value]);
+}
+return arr;
+};
+
 
 /* #getKeys
  *
@@ -419,7 +432,13 @@ var getValues;
  * @param {Object}
  * @return {Array}
  */
-var getKeys;
+var getKeys = function(obj){
+  var arr = []
+  for (var x in obj) {
+    arr.push(x);
+  }
+  return arr;
+};
 
 /* #objectToArray
  *
@@ -429,7 +448,16 @@ var getKeys;
  * @param {Object}
  * @return {Array}
  */
-var objectToArray;
+var objectToArray = function(obj){
+  var arr = [];
+
+  for (var x in obj){
+    var tuples = [];
+    tuples.push(x, obj[x]);
+    arr.push(tuples);
+  }
+  return arr;
+}
 
 /* #arrayToObject
  *
@@ -439,7 +467,13 @@ var objectToArray;
  * @param {Array}
  * @return {Object}
  */
-var arrayToObject;
+var arrayToObject = function(arr){
+  var obj = {};
+    for(var i = 0; i < arr.length; i++){
+    obj[arr[i]] = false;
+  }
+  return obj;
+};
 
 /* #arraysToObject
  *
@@ -450,7 +484,13 @@ var arrayToObject;
  * @param {Array}
  * @return {Object}
  */
-var arraysToObject;
+var arraysToObject = function(keys, values){
+  var obj = {};
+  for(var i = 0; i < keys.length; i++){
+    obj[keys[i]] = values[i];
+  }
+  return obj;
+}
 
 /* #objectsToTuples
  *
@@ -558,12 +598,12 @@ module.exports = {
   makeObjectReverse: makeObjectReverse,
   tupleToObject: tupleToObject,
   tupleToObjectReverse: tupleToObjectReverse,
-  strToKeys: null,
-  getValues: null,
+  strToKeys: strToKeys,
+  getValues: getValues,
   getKeys: getKeys,
-  objectToArray: null,
-  arrayToObject: null,
-  arraysToObject: null,
+  objectToArray: objectToArray,
+  arrayToObject: arrayToObject,
+  arraysToObject: arraysToObject,
   objectsToTuples: null,
   mapArrayValues: null,
   mapStringCounts: null,
