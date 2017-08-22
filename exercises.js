@@ -11,7 +11,7 @@ var doubleArray = function(arr) {
     result.push(arr[i] * 2); 
   }
   return result;
-}
+};
 
 
 /* #sumArrays
@@ -23,7 +23,7 @@ var doubleArray = function(arr) {
  * @return {Bool}
  */
 
- function sumArrays(array1, array2) {
+ var sumArrays = function(array1, array2) {
    var result = 0;
    var loopLength = 0;
  
@@ -36,9 +36,8 @@ var doubleArray = function(arr) {
    for (var i = 0; i < loopLength; i++) {
      result += (array1[i]+array2[i])
    }
- 
    return result;
-}
+};
 
 /* #stringCount
  *
@@ -48,12 +47,9 @@ var doubleArray = function(arr) {
  * @return {Number}
  */
 
- var str;
- function stringCount(str) {
+var stringCount = function(str) {
   var result = str.length;
-  if (typeof str === "string") {
-    return result; 
- } 
+  return result; 
  };
 
 /* #arrayLength
@@ -64,8 +60,8 @@ var doubleArray = function(arr) {
  * @return {Number}
  */
 
-var arr = [];
-function arrayLength(arr) {
+
+var arrayLength = function(arr) {
   var result = arr.length;
     return result;
 };
@@ -79,7 +75,7 @@ function arrayLength(arr) {
  */
 
 
-function countAll (num){
+var countAll = function(num){
   var numberHolder = 0;
     for(var i = 0; i < num.length; i++){
     numberHolder += num[i]
@@ -94,7 +90,7 @@ function countAll (num){
  * @param {Array}
  * @return {Array}
 */
-function countStrings(arr) {
+var countStrings = function(arr) {
   var numberHolder = [];
   for(var i = 0; i < arr.length; i++){
    numberHolder[i] = arr[i].length;
@@ -111,10 +107,10 @@ function countStrings(arr) {
  * @param {String}
  * @return {Number}
  */
-function countAllStrings(str){
+var countAllStrings = function(str){
   var sum = 0;
   for (var i = 0; i < str.length; i++){
-    sum = sum + str[i].length;
+    sum += str[i].length;
   }
   return sum;
 };
@@ -127,12 +123,11 @@ function countAllStrings(str){
  * @return {Array}
  */
 var convertToArray = function(obj){
-var arr = [];
-for(var value in obj) {
-  arr.push(obj[value]);
-
+  var arr = [];
+    for(var value in obj) {
+    arr.push(obj[value]);
 }
-return arr;
+    return arr;
 };
 
 
